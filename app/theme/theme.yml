@@ -1,13 +1,13 @@
 # Please, do not change the id of the theme
 id: "theme"
 
-name: "theme"
+name: "HyperUI"
 
-description: "A brief description of the theme"
+description: "HyperUI components converted into Maglev sections"
 
 section_categories:
-- name: "Banner Components"
-  id: banner_components
+- name: "Banners"
+  id: banners
 
 # Properties of your theme such as the primary color, font name, ...etc.
 style_settings: []

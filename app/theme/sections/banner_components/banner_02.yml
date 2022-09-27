@@ -2,7 +2,7 @@
 name: "Centered with Actions and Gradient"
 
 # Category of the section in the editor UI (headers, features, testimonials, ...etc)
-category: banner_components
+category: banners
 
 # A section might have the same content all over the site, like a menu or a footer for instance.
 # To enable this behavior, uncomment the following statement

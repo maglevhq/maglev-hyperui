@@ -1,8 +1,8 @@
 # Name of the section displayed in the editor UI
-name: "Centered with Actions"
+name: "Left with Actions and Image"
 
 # Category of the section in the editor UI (headers, features, testimonials, ...etc)
-category: banner_components
+category: banners
 
 # A section might have the same content all over the site, like a menu or a footer for instance.
 # To enable this behavior, uncomment the following statement
@@ -21,12 +21,17 @@ settings:
 - label: "Top title"
   id: top_title
   type: text
-  default: "Understand User Flow."
+  default: "Let us find your"
 
 - label: "Bottom title"
   id: bottom_title
   type: text
-  default: "Increase Conversion."
+  default: "Forever Home."
+
+- label: "Background image"
+  id: background_image
+  type: image
+  default: "/theme/image-placeholder.jpg"
 
 - label: "Body"
   id: body
@@ -82,8 +87,8 @@ blocks: []
 # (it's also be useful when taking a screenshot of the section).
 # sample:
 #   settings:
-#     top_title: "Understand User Flow."
-#     bottom_title: "Increase Conversion."
+#     top_title: "Let us find your"
+#     bottom_title: "Forever Home."
 #     body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus numquam ea!"
 #     primary_cta: 
 #       text: "Get Started"
