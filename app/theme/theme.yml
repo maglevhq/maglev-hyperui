@@ -8,6 +8,8 @@ description: "HyperUI components converted into Maglev sections"
 section_categories:
 - name: "Banners"
   id: banners
+- name: "Call to actions"
+  id: cta
 
 # Properties of your theme such as the primary color, font name, ...etc.
 style_settings: []
