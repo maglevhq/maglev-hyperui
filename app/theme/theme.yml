@@ -1,0 +1,23 @@
+# Please, do not change the id of the theme
+id: "theme"
+
+name: "theme"
+
+description: "A brief description of the theme"
+
+section_categories:
+- name: "Banner Components"
+  id: banner_components
+
+# Properties of your theme such as the primary color, font name, ...etc.
+style_settings: []
+
+pages:
+- title: "Home page"
+  path:  "/index"
+
+# List of CSS class names used by your library of icons (font awesome, remixicons, ...etc)
+icons: []
+
+
+

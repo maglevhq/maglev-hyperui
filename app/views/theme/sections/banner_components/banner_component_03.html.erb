@@ -1,0 +1,25 @@
+<%= maglev_section.wrapper_tag.div class: "relative bg-center bg-no-repeat bg-cover bg-[url(#{maglev_section.settings.background_image.url})]" do %>
+  <div
+    class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"
+  ></div>
+
+  <div
+    class="relative max-w-screen-xl px-4 py-32 mx-auto sm:px-6 lg:px-8 lg:h-screen lg:items-center lg:flex"
+  >
+    <div class="max-w-xl text-center sm:text-left">
+      <h1 class="text-3xl font-extrabold sm:text-5xl">
+        <%= maglev_section.setting_tag :top_title %>
+
+        <%= maglev_section.setting_tag :bottom_title, html_tag: 'strong', class: 'block font-extrabold text-rose-700' %>
+      </h1>
+
+      <%= maglev_section.setting_tag :body, html_tag: 'p', class: 'max-w-lg mt-4 sm:leading-relaxed sm:text-xl' %>
+      
+      <div class="flex flex-wrap gap-4 mt-8 text-center">
+        <%= maglev_section.setting_tag :primary_cta, class: "block w-full px-12 py-3 text-sm font-medium text-white rounded shadow bg-rose-600 sm:w-auto active:bg-rose-500 hover:bg-rose-700 focus:outline-none focus:ring" if maglev_section.settings.show_primary_cta.true? %>
+        
+        <%= maglev_section.setting_tag :secondary_cta, class: "block w-full px-12 py-3 text-sm font-medium bg-white rounded shadow text-rose-600 sm:w-auto hover:text-rose-700 active:text-rose-500 focus:outline-none focus:ring" if maglev_section.settings.show_secondary_cta.true? %>
+      </div>
+    </div>
+  </div>
+<% end %>

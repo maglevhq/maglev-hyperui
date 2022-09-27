@@ -1,0 +1,23 @@
+<%= maglev_section.wrapper_tag.div class: 'text-white bg-gray-900' do %>
+  <div
+    class="max-w-screen-xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex"
+  >
+    <div class="max-w-3xl mx-auto text-center">
+      <h1
+        class="text-3xl font-extrabold text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
+      >
+        <%= maglev_section.setting_tag :top_title %>
+
+        <%= maglev_section.setting_tag :bottom_title, html_tag: 'span', class: 'sm:block' %>
+      </h1>
+
+      <%= maglev_section.setting_tag :body, html_tag: 'p', class: 'max-w-xl mx-auto mt-4 sm:leading-relaxed sm:text-xl' %>
+
+      <div class="flex flex-wrap justify-center gap-4 mt-8">
+        <%= maglev_section.setting_tag :primary_cta, class: "block w-full px-12 py-3 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded sm:w-auto active:text-opacity-75 hover:bg-transparent hover:text-white focus:outline-none focus:ring" if maglev_section.settings.show_primary_cta.true? %>
+        
+        <%= maglev_section.setting_tag :secondary_cta, class: "block w-full px-12 py-3 text-sm font-medium text-white border border-blue-600 rounded sm:w-auto hover:bg-blue-600 active:bg-blue-500 focus:outline-none focus:ring" if maglev_section.settings.show_secondary_cta.true? %>
+      </div>
+    </div>
+  </div>
+<% end %>

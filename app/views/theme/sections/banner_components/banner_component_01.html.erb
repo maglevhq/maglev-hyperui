@@ -1,0 +1,20 @@
+<%= maglev_section.wrapper_tag.div class: 'bg-gray-50' do %>
+  <div
+    class="max-w-screen-xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex"
+  >
+    <div class="max-w-xl mx-auto text-center">
+      <h1 class="text-3xl font-extrabold sm:text-5xl">
+        <%= maglev_section.setting_tag :top_title %>
+        <%= maglev_section.setting_tag :bottom_title, html_tag: 'strong', class: 'font-extrabold text-red-700 sm:block' %>
+      </h1>
+
+      <%= maglev_section.setting_tag :body, html_tag: 'p', class: 'mt-4 sm:leading-relaxed sm:text-xl prose' %>
+        
+      <div class="flex flex-wrap justify-center gap-4 mt-8">
+        <%= maglev_section.setting_tag :primary_cta, class: "block w-full px-12 py-3 text-sm font-medium text-white bg-red-600 rounded shadow sm:w-auto active:bg-red-500 hover:bg-red-700 focus:outline-none focus:ring" if maglev_section.settings.show_primary_cta.true? %>
+        
+        <%= maglev_section.setting_tag :secondary_cta, class: "block w-full px-12 py-3 text-sm font-medium text-red-600 rounded shadow sm:w-auto hover:text-red-700 active:text-red-500 focus:outline-none focus:ring" if maglev_section.settings.show_secondary_cta.true? %>
+      </div>
+    </div>
+  </div>
+<% end %>
