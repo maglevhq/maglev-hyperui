@@ -6,8 +6,10 @@ name: "HyperUI"
 description: "HyperUI components converted into Maglev sections"
 
 section_categories:
-- name: "Banners"
-  id: banners
+- name: "Navigation"
+  id: nav
+- name: "Banner"
+  id: banner
 - name: "Call to actions"
   id: cta
 - name: "FAQ"
