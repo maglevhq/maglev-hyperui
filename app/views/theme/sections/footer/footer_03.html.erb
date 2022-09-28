@@ -1,0 +1,69 @@
+<%= maglev_section.wrapper_tag.footer class: 'text-white bg-gray-900 lg:grid lg:grid-cols-5' do %>
+  <aside class="hidden lg:relative lg:col-span-2 lg:block">
+    <%= maglev_section.setting_tag :image, class: 'absolute inset-0 object-cover w-full h-full' %>    
+  </aside>
+
+  <div class="px-4 py-16 sm:px-6 lg:px-8 lg:col-span-3">
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+      <div>
+        <p class="font-medium">
+          <span class="text-xs tracking-widest uppercase">Call</span>
+
+          <a class="block text-2xl sm:text-3xl hover:opacity-75" href="tel:<%= maglev_section.settings.phone_number %>">
+            <%= maglev_section.setting_tag :phone_number %>
+          </a>
+        </p>
+
+        <%= maglev_section.setting_tag :opening_hours, html_tag: 'p', class: 'mt-8 space-y-2 text-sm' %>
+        
+        <% maglev_section.blocks.each do |maglev_block| %>
+          <% next if maglev_block.type != 'social_links_row' %>
+          <%= maglev_block.wrapper_tag.div class: 'flex gap-3 mt-16' do %>
+            <% maglev_block.children.each do |nested_maglev_block| %>
+              <%= nested_maglev_block.wrapper_tag.span do %>
+                <a 
+                  class="w-8 h-8 border rounded-full border-white/25 hover:opacity-75 flex items-center justify-center" 
+                  href="<%= nested_maglev_block.settings.link.href %>" 
+                  <% if nested_maglev_block.settings.link.open_new_window? %>target="_blank"<% end %>
+                  rel="noreferrer"
+                >
+                  <span class="sr-only"><%= nested_maglev_block.settings.name %></span>
+                  <%= nested_maglev_block.setting_tag :icon %>
+                </a>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <% maglev_section.blocks.each do |maglev_block| %>
+          <% next if maglev_block.type != 'column' %>
+          <%= maglev_block.wrapper_tag.div do %>
+            <%= maglev_block.setting_tag :title, html_tag: 'p', class: 'font-medium' %>
+
+            <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
+              <% maglev_block.children.each do |nested_maglev_block| %>
+                <%= nested_maglev_block.wrapper_tag.span do %>
+                  <%= nested_maglev_block.setting_tag :link, class: 'hover:opacity-75' %>
+                <% end %>
+              <% end %>
+            </nav>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="pt-12 mt-12 border-t border-gray-800">
+      <div
+        class="text-sm text-gray-300 sm:items-center sm:justify-between sm:flex"
+      >
+        <%= maglev_section.setting_tag :quick_links, html_tag: 'div', class: 'flex gap-3' %>
+
+        <%= maglev_section.setting_tag :copyright, html_tag: 'p', class: 'mt-4 sm:mt-0' %>
+      </div>
+
+      <%= maglev_section.setting_tag :text, html_tag: 'p', class: 'mt-8 text-xs text-gray-500' %>
+    </div>
+  </div>
+<% end %>

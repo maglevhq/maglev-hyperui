@@ -1,5 +1,5 @@
 # Name of the section displayed in the editor UI
-name: "Simple Stacked"
+name: "Split with Company Info, Links and Image"
 
 # Category of the section in the editor UI (headers, features, testimonials, ...etc)
 category: footer
@@ -21,10 +21,26 @@ singleton: true
 # A setting type can be one of the following values: text, image, link, collection_item, checkbox, color and icon.
 # Please visit: https://docs.maglev.dev/concepts/setting for more explanation.
 settings:
-- label: "Logo"
-  id: logo
+- label: "Image"
+  id: image
   type: image
   default: "/theme/image-placeholder.jpg"
+
+- label: "Phone number"
+  id: phone_number
+  type: text
+  # html: true
+  # line_break: true
+  # nb_rows: 4
+  default: "0123456789"
+
+- label: "Opening hours"
+  id: opening_hours
+  type: text
+  html: true
+  line_break: true
+  nb_rows: 4
+  default: "Monday to Friday: 10am - 5pm<br/>Weekend: 10am - 3pm"
 
 - label: "Copyright"
   id: copyright
@@ -32,7 +48,22 @@ settings:
   html: true
   line_break: true
   nb_rows: 2
-  default: "Copyright © 2022. Company Name. All rights reserved."
+  default: "© 2022 Company Name."
+
+- label: "Quick links"
+  id: quick_links
+  type: text
+  html: true
+  line_break: true
+  default: "<a href=\"#\">Terms & Conditions</a>&nbsp;&nbsp;<a href=\"#\">Privacy Policy</a>&nbsp;&nbsp;<a href=\"#\">Cookies</a>"
+
+- label: "Text"
+  id: text
+  type: text
+  html: true
+  line_break: true
+  nb_rows: 4
+  default: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus mollitia quia quod repellendus. Porro harum, odio dolore perspiciatis praesentium provident esse consequatur quibusdam aperiam, cupiditate omnis modi in quasi? In, maxime odio vel repellat sed earum? Debitis quaerat facilis animi. Odio natus nostrum laboriosam impedit magnam praesentium asperiores consectetur ipsum."
 
 # Definition of the blocks.
 # You can define as many types of blocks as you want.
@@ -63,7 +94,7 @@ blocks:
 - name: "Column"
   type: column
   accept: ['link_item']
-  limit: 4
+  limit: 2
   settings:
   - label: "Links"
     id: title
@@ -94,12 +125,12 @@ blocks_presentation: "tree"
 # (it's also be useful when taking a screenshot of the section).
 sample:
   settings:
-    logo: "/theme/image-placeholder.jpg"
-    title: "Get the latest news!"
-    body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam molestias."   
-    button_label: "Sign up"
-    copyright: "Copyright © 2022. Company Name. All rights reserved."
+    image: "/theme/image-placeholder.jpg"
+    phone_number: "0123456789"
+    opening_hours: "Monday to Friday: 10am - 5pm<br/>Weekend: 10am - 3pm"
     quick_links: "<a href=\"#\">Terms & Conditions</a>&nbsp;<a href=\"#\">Privacy Policy</a>&nbsp;<a href=\"#\">Cookies</a>"
+    copyright: "© 2022 Company Name."
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus mollitia quia quod repellendus. Porro harum, odio dolore perspiciatis praesentium provident esse consequatur quibusdam aperiam, cupiditate omnis modi in quasi? In, maxime odio vel repellat sed earum? Debitis quaerat facilis animi. Odio natus nostrum laboriosam impedit magnam praesentium asperiores consectetur ipsum."  
   blocks: 
   - type: social_links_row
     settings: []
@@ -184,49 +215,3 @@ sample:
         link: 
           text: "Careers"
           href: '#'
-    
-  - type: column
-    settings:
-      title: "Helpful Links"
-    children:
-    - type: link_item
-      settings:
-        link: 
-          text: "Contact"
-          href: '#'
-    - type: link_item
-      settings:
-        link: 
-          text: "FAQs"
-          href: '#'
-    - type: link_item
-      settings:
-        link: 
-          text: "Live Chat"
-          href: '#'
-  
-  - type: column
-    settings:
-      title: "Legal"
-    children:
-    - type: link_item
-      settings:
-        link: 
-          text: "Accessibility"
-          href: '#'
-    - type: link_item
-      settings:
-        link: 
-          text: "Returns Policy"
-          href: '#'
-    - type: link_item
-      settings:
-        link: 
-          text: "Refund Policy"
-          href: '#'
-    - type: link_item
-      settings:
-        link: 
-          text: "Hiring Statistics"
-          href: '#'    
-  
