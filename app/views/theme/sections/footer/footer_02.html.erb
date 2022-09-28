@@ -1,0 +1,47 @@
+<%= maglev_section.wrapper_tag.footer class: 'bg-gray-50' do %>
+  <div class="max-w-screen-xl px-4 py-16 mx-auto space-y-12 sm:px-6 lg:px-8">
+    <div class="sm:items-center sm:justify-between sm:flex">
+      <%= maglev_section.setting_tag :logo, class: 'block max-h-10' %>
+
+      <% maglev_section.blocks.each do |maglev_block| %>
+        <% next if maglev_block.type != 'social_links_row' %>
+        <%= maglev_block.wrapper_tag.div class: 'flex gap-6 mt-8 text-gray-500 sm:mt-0' do %>
+          <% maglev_block.children.each do |nested_maglev_block| %>
+            <%= nested_maglev_block.wrapper_tag.span do %>
+              <a 
+                class="hover:opacity-75 text-2xl" 
+                href="<%= nested_maglev_block.settings.link.href %>" 
+                <% if nested_maglev_block.settings.link.open_new_window? %>target="_blank"<% end %>
+                rel="noreferrer"
+              >
+                <span class="sr-only"><%= nested_maglev_block.settings.name %></span>
+                <%= nested_maglev_block.setting_tag :icon %>
+              </a>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div
+      class="grid grid-cols-1 gap-8 pt-12 border-t border-gray-100 sm:grid-cols-2 lg:grid-cols-4"
+    >
+      <% maglev_section.blocks.each do |maglev_block| %>
+        <% next if maglev_block.type != 'column' %>
+        <%= maglev_block.wrapper_tag.div do %>
+          <%= maglev_block.setting_tag :title, html_tag: 'p', class: 'font-medium' %>
+
+          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+            <% maglev_block.children.each do |nested_maglev_block| %>
+              <%= nested_maglev_block.wrapper_tag.span do %>
+                <%= nested_maglev_block.setting_tag :link %>
+              <% end %>
+            <% end %>
+          </nav>
+        <% end %>
+      <% end %>
+    </div>
+
+    <%= maglev_section.setting_tag :copyright, html_tag: 'p', class: 'text-xs text-gray-500' %>
+  </div>
+<% end %>
