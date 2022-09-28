@@ -14,9 +14,11 @@
 
           <ul class="flex items-center gap-6 text-sm">
             <% maglev_section.blocks.each do |maglev_block| %>
-              <% next if maglev_block.type != 'link_item' %>
-              <%= maglev_block.wrapper_tag.li do %>
-                <%= maglev_block.setting_tag :link, class: 'text-gray-500 transition hover:text-gray-500/75' %>
+              <% next if maglev_block.type != 'link_group' %>
+              <% maglev_block.children.each do |nested_maglev_block| %>
+                <%= nested_maglev_block.wrapper_tag.li do %>
+                  <%= nested_maglev_block.setting_tag :link, class: 'text-gray-500 transition hover:text-gray-500/75' %>
+                <% end %>
               <% end %>
             <% end %>
           </ul>
@@ -26,11 +28,13 @@
       <div class="flex items-center gap-4">
         <div class="sm:gap-4 sm:flex">
           <% maglev_section.blocks.each do |maglev_block| %>
-            <% next if maglev_block.type != 'button_item' %>
-            <%= maglev_block.wrapper_tag.div do %>
-              <%= maglev_block.setting_tag :button, class: 'block px-5 py-2.5 text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 transition rounded-md' if maglev_block.settings.is_primary.true? %>
+            <% next if maglev_block.type != 'button_group' %>
+            <% maglev_block.children.each do |nested_maglev_block| %>
+              <%= nested_maglev_block.wrapper_tag.div do %>
+                <%= nested_maglev_block.setting_tag :button, class: 'block px-5 py-2.5 text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 transition rounded-md' if nested_maglev_block.settings.is_primary.true? %>
 
-              <%= maglev_block.setting_tag :button, class: 'hidden sm:block px-5 py-2.5 text-sm font-medium text-teal-600 bg-gray-100 rounded-md hover:text-teal-600/75 transition' if maglev_block.settings.is_primary.false? %>
+                <%= nested_maglev_block.setting_tag :button, class: 'hidden sm:block px-5 py-2.5 text-sm font-medium text-teal-600 bg-gray-100 rounded-md hover:text-teal-600/75 transition' if nested_maglev_block.settings.is_primary.false? %>
+              <% end %>
             <% end %>
           <% end %>
         </div>

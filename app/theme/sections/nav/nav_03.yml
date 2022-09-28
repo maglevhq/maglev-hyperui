@@ -29,8 +29,15 @@ settings:
 # Definition of the blocks.
 # You can define as many types of blocks as you want.
 blocks: 
+- name: "Links"
+  type: link_group
+  accept: ['link_item']
+  limit: 1
+  settings: []
+
 - name: "Link"
   type: link_item
+  root: false
   settings:
   - label: "Link"
     id: link
@@ -40,8 +47,15 @@ blocks:
       text: "Link"
       href: "#"
 
+- name: "Buttons"
+  type: button_group
+  accept: ['button_item']
+  limit: 1
+  settings: []
+
 - name: "Button"
   type: button_item
+  root: false
   settings:
   - label: "Button"
     id: button
@@ -62,7 +76,7 @@ blocks_label: "Navigation"
 # By default, blocks are presented as a list in the editor UI. 
 # If you like to use blocks to build a menu with sub menu items, 
 # consider using the tree presentation
-# blocks_presentation: "tree"
+blocks_presentation: "tree"
 
 # In order to get a section with "meaning" content for the editors, 
 # you can set the default content of a new instance of this section.
@@ -70,46 +84,52 @@ blocks_label: "Navigation"
 sample:
   settings:
     logo: "/theme/logoipsum.svg"
-  blocks:     
-  - type: link_item
-    settings:
-      link:
-        text: "About"
-        href: "#"
-  - type: link_item
-    settings:
-      link:
-        text: "Careers"
-        href: "#"
-  - type: link_item
-    settings:
-      link:
-        text: "History"
-        href: "#"
-  - type: link_item
-    settings:
-      link:
-        text: "Services"
-        href: "#"
-  - type: link_item
-    settings:
-      link:
-        text: "Projects"
-        href: "#"
-  - type: link_item
-    settings:
-      link:
-        text: "Blog"
-        href: "#"
-  - type: button_item
-    settings:
-      button:
-        text: "Login"
-        href: "#"
-      is_primary: true
-  - type: button_item
-    settings:
-      button:
-        text: "Register"
-        href: "#"
-      is_primary: false
+  blocks:
+  - type: link_group
+    settings: []
+    children:
+    - type: link_item
+      settings:
+        link:
+          text: "About"
+          href: "#"
+    - type: link_item
+      settings:
+        link:
+          text: "Careers"
+          href: "#"
+    - type: link_item
+      settings:
+        link:
+          text: "History"
+          href: "#"
+    - type: link_item
+      settings:
+        link:
+          text: "Services"
+          href: "#"
+    - type: link_item
+      settings:
+        link:
+          text: "Projects"
+          href: "#"
+    - type: link_item
+      settings:
+        link:
+          text: "Blog"
+          href: "#"
+  - type: button_group
+    settings: []
+    children:
+    - type: button_item
+      settings:
+        button:
+          text: "Login"
+          href: "#"
+        is_primary: true
+    - type: button_item
+      settings:
+        button:
+          text: "Register"
+          href: "#"
+        is_primary: false

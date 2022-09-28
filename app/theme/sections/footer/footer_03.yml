@@ -68,7 +68,7 @@ settings:
 # Definition of the blocks.
 # You can define as many types of blocks as you want.
 blocks: 
-- name: "Social links Row"
+- name: "Social links"
   type: social_links_row
   accept: ['social_link_item']
   limit: 1

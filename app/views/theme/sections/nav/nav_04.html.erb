@@ -30,9 +30,11 @@
         class="hidden lg:uppercase lg:text-gray-500 lg:tracking-wide lg:font-bold lg:text-xs lg:gap-4 lg:flex"
       >
         <% maglev_section.blocks.each do |maglev_block| %>
-          <% next if maglev_block.type != 'link_item' %>
-          <%= maglev_block.wrapper_tag.span do %>
-            <%= maglev_block.setting_tag :link, class: 'block h-16 leading-[4rem] border-b-4 border-transparent hover:text-red-700 hover:border-current' %>
+          <% next if maglev_block.type != 'link_group' %>
+          <% maglev_block.children.each do |nested_maglev_block| %>
+            <%= nested_maglev_block.wrapper_tag.span do %>
+              <%= nested_maglev_block.setting_tag :link, class: 'block h-16 leading-[4rem] border-b-4 border-transparent hover:text-red-700 hover:border-current' %>
+            <% end %>
           <% end %>
         <% end %>
       </nav>
@@ -42,16 +44,18 @@
           class="flex items-center border-gray-100 divide-x divide-gray-100 border-x"
         >
           <% maglev_section.blocks.each do |maglev_block| %>
-            <% next if maglev_block.type != 'button_item' %>
-            <%= maglev_block.wrapper_tag.span do %>
-              <a
-                href="<%= maglev_block.settings.button.href %>"
-                <% if maglev_block.settings.button.open_new_window? %>target="_blank"<% end %>
-                class="flex items-center h-16 px-6 border-b-4 border-transparent hover:border-red-700"
-              >
-                <%= maglev_block.setting_tag :icon %>
-                <span class="sr-only"><%= maglev_block.settings.button.text %></span>
-              </a>
+            <% next if maglev_block.type != 'button_group' %>
+            <% maglev_block.children.each do |nested_maglev_block| %>
+              <%= nested_maglev_block.wrapper_tag.span do %>
+                <a
+                  href="<%= nested_maglev_block.settings.button.href %>"
+                  <% if nested_maglev_block.settings.button.open_new_window? %>target="_blank"<% end %>
+                  class="flex items-center h-16 px-6 border-b-4 border-transparent hover:border-red-700"
+                >
+                  <%= nested_maglev_block.setting_tag :icon %>
+                  <span class="sr-only"><%= nested_maglev_block.settings.button.text %></span>
+                </a>
+              <% end %>
             <% end %>
           <% end %>
         </div>
