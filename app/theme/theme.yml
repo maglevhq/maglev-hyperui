@@ -12,6 +12,8 @@ section_categories:
   id: banner
 - name: "Call to action"
   id: cta
+- name: "Feature"
+  id: feature
 - name: "FAQ"
   id: faq
 - name: "Review"

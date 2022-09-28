@@ -1,0 +1,26 @@
+<%= maglev_section.wrapper_tag.section class: 'text-white bg-gray-900' do %>
+  <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-lg mx-auto text-center">
+      <%= maglev_section.setting_tag :title, html_tag: 'h2', class: 'text-3xl font-bold sm:text-4xl' %>
+
+      <%= maglev_section.setting_tag :body, html_tag: 'p', class: 'mt-4 text-gray-300' %>      
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
+      <% maglev_section.blocks.each do |maglev_block| %>
+        <%= maglev_block.wrapper_tag.a class: 'block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-pink-500/10 hover:border-pink-500/10' do %>
+      
+          <%= maglev_block.setting_tag :icon, class: 'text-3xl text-pink-500' %>
+
+          <%= maglev_block.setting_tag :name, html_tag: 'h3', class: 'mt-4 text-xl font-bold text-white' %>
+
+          <%= maglev_block.setting_tag :description, html_tag: 'p', class: 'mt-1 text-sm text-gray-300' %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="mt-12 text-center">
+      <%= maglev_section.setting_tag :button, class: 'inline-flex items-center px-8 py-3 mt-8 text-white bg-pink-600 border border-pink-600 rounded hover:bg-transparent active:text-pink-500 focus:outline-none focus:ring text-sm font-medium' %>
+    </div>
+  </div>
+<% end %>
