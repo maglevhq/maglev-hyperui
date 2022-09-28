@@ -10,6 +10,8 @@ section_categories:
   id: banners
 - name: "Call to actions"
   id: cta
+- name: "FAQ"
+  id: faq
 
 # Properties of your theme such as the primary color, font name, ...etc.
 style_settings: []
