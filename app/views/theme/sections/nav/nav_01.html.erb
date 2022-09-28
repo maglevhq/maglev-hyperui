@@ -1,0 +1,58 @@
+<%= maglev_section.wrapper_tag.header class: 'bg-white' do %>
+  <div
+    class="flex items-center h-16 max-w-screen-xl gap-8 px-4 mx-auto sm:px-6 lg:px-8"
+  >
+    <a class="block text-teal-600" href="/">
+      <span class="sr-only">Home</span>
+      <%= maglev_section.setting_tag :logo, class: 'max-h-10' %>
+    </a>
+
+    <div class="flex items-center justify-end flex-1 md:justify-between">
+      <nav class="hidden md:block" aria-labelledby="header-navigation">
+        <h2 class="sr-only" id="header-navigation">Header navigation</h2>
+
+        <ul class="flex items-center gap-6 text-sm">
+          <% maglev_section.blocks.each do |maglev_block| %>
+            <% next if maglev_block.type != 'link_item' %>
+            <%= maglev_block.wrapper_tag.li do %>
+              <%= maglev_block.setting_tag :link, class: 'text-gray-500 transition hover:text-gray-500/75' %>
+            <% end %>
+          <% end %>
+        </ul>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <div class="sm:gap-4 sm:flex">
+          <% maglev_section.blocks.each do |maglev_block| %>
+            <% next if maglev_block.type != 'button_item' %>
+            <%= maglev_block.wrapper_tag.div do %>
+              <%= maglev_block.setting_tag :button, class: 'block px-5 py-2.5 text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 transition rounded-md' if maglev_block.settings.is_primary.true? %>
+
+              <%= maglev_block.setting_tag :button, class: 'hidden sm:block px-5 py-2.5 text-sm font-medium text-teal-600 bg-gray-100 rounded-md hover:text-teal-600/75 transition' if maglev_block.settings.is_primary.false? %>
+            <% end %>
+          <% end %>
+        </div>
+
+        <button
+          class="block p-2.5 text-gray-600 transition bg-gray-100 rounded md:hidden hover:text-gray-600/75"
+        >
+          <span class="sr-only">Toggle menu</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+<% end %>
