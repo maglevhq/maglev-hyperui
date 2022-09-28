@@ -1,0 +1,94 @@
+# Name of the section displayed in the editor UI
+name: "Slim with Branding and Link Top"
+
+# Category of the section in the editor UI (headers, features, testimonials, ...etc)
+category: footer
+
+# A section might have the same content all over the site, like a menu or a footer for instance.
+# To enable this behavior, uncomment the following statement
+site_scoped: true
+
+# Display or not the button to insert a new section after this one
+insert_button: false
+
+# Insert this section at the top or the bottom of the page (default: nil)
+insert_at: bottom 
+
+# one single instance per page?
+singleton: true
+
+# Definition of the settings:
+# A setting type can be one of the following values: text, image, link, collection_item, checkbox, color and icon.
+# Please visit: https://docs.maglev.dev/concepts/setting for more explanation.
+settings:
+- label: "Logo"
+  id: logo
+  type: image
+  default: "/theme/image-placeholder.jpg"
+
+- label: "Text"
+  id: text
+  type: text
+  html: true
+  line_break: true
+  nb_rows: 4
+  default: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa cum itaque neque."
+
+- label: "Copyright"
+  id: copyright
+  type: text
+  html: true
+  line_break: true
+  nb_rows: 2
+  default: "Copyright © 2022. All rights reserved."
+
+# Definition of the blocks.
+# You can define as many types of blocks as you want.
+blocks: 
+- name: "Link"
+  type: link_item
+  settings:
+  - label: "Link"
+    id: link
+    type: link
+    with_text: true
+    default: "/"
+
+# By default, in the editor UI, blocks will be listed below the "Content" title.
+# The title can be changed with the following property:
+blocks_label: "Links"
+
+# By default, blocks are presented as a list in the editor UI. 
+# If you like to use blocks to build a menu with sub menu items, 
+# consider using the tree presentation
+# blocks_presentation: "tree"
+
+# In order to get a section with "meaning" content for the editors, 
+# you can set the default content of a new instance of this section.
+# (it's also be useful when taking a screenshot of the section).
+sample:
+  settings:
+    logo: "/theme/image-placeholder.jpg"
+    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa cum itaque neque."
+    copyright: "Copyright © 2022. All rights reserved."
+  blocks: 
+  - type: link_item
+    settings:
+      link:
+        text: "About"
+        href: "#"
+  - type: link_item
+    settings:
+      link:
+        text: "Services"
+        href: "#"
+  - type: link_item
+    settings:
+      link:
+        text: "Projects"
+        href: "#"
+  - type: link_item
+    settings:
+      link:
+        text: "Blog"
+        href: "#"

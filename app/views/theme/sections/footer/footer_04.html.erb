@@ -1,0 +1,29 @@
+<%= maglev_section.wrapper_tag.footer class: 'bg-gray-100' do %>
+  <div
+    class="relative max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8 lg:pt-24"
+  >
+    <div class="lg:flex lg:items-end lg:justify-between">
+      <div>
+        <div class="flex justify-center lg:justify-start">
+          <%= maglev_section.setting_tag :logo, class: 'block max-h-14' %>
+        </div>
+
+        <%= maglev_section.setting_tag :text, html_tag: 'p', class: 'max-w-md mx-auto mt-6 leading-relaxed text-center text-gray-500 lg:text-left' %>
+      </div>
+
+      <nav class="mt-12 lg:mt-0" aria-labelledby="footer-navigation">
+        <h2 class="sr-only" id="footer-navigation">Footer navigation</h2>
+
+        <ul class="flex flex-wrap justify-center gap-6 lg:justify-end md:gap-8 lg:gap-12">
+          <% maglev_section.blocks.each do |maglev_block| %>
+            <%= maglev_block.wrapper_tag.li do %>
+              <%= maglev_block.setting_tag :link, class: 'text-gray-700 transition hover:text-gray-700/75' %>
+            <% end %>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+
+    <%= maglev_section.setting_tag :copyright, html_tag: 'p', class: 'mt-12 text-sm text-center text-gray-500 lg:text-right' %>
+  </div>
+<% end %>
