@@ -12,6 +12,8 @@ section_categories:
   id: cta
 - name: "FAQ"
   id: faq
+- name: "Footer"
+  id: footer
 
 # Properties of your theme such as the primary color, font name, ...etc.
 style_settings: []

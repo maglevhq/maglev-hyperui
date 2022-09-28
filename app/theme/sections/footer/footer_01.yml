@@ -1,0 +1,220 @@
+# Name of the section displayed in the editor UI
+name: "Large with Newsletter Form"
+
+# Category of the section in the editor UI (headers, features, testimonials, ...etc)
+category: footer
+
+# A section might have the same content all over the site, like a menu or a footer for instance.
+# To enable this behavior, uncomment the following statement
+site_scoped: true
+
+# Display or not the button to insert a new section after this one
+insert_button: false
+
+# Insert this section at the top or the bottom of the page (default: nil)
+insert_at: bottom 
+
+# one single instance per page?
+singleton: true
+
+# Definition of the settings:
+# A setting type can be one of the following values: text, image, link, collection_item, checkbox, color and icon.
+# Please visit: https://docs.maglev.dev/concepts/setting for more explanation.
+settings:
+- label: "Logo"
+  id: logo
+  type: image
+  default: "/theme/image-placeholder.jpg"
+
+- label: "Title"
+  id: title
+  type: text
+  default: "Get the latest news!"
+
+- label: "Body"
+  id: body
+  type: text
+  html: true
+  line_break: true
+  nb_rows: 3
+  default: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam molestias."
+
+- label: "Button label"
+  id: button_label
+  type: text
+  default: "Sign up"
+
+- label: "Copyright"
+  id: copyright
+  type: text
+  html: true
+  line_break: true
+  nb_rows: 2
+  default: "Copyright © 2022. Company Name. All rights reserved."
+
+- label: "Quick links"
+  id: quick_links
+  type: text
+  html: true
+  line_break: true
+  default: "<a href=\"#\">Terms & Conditions</a>&nbsp;&nbsp;<a href=\"#\">Privacy Policy</a>&nbsp;&nbsp;<a href=\"#\">Cookies</a>"
+
+# Definition of the blocks.
+# You can define as many types of blocks as you want.
+blocks: 
+- name: "Column"
+  type: column
+  accept: ['link_item']
+  limit: 5
+  settings:
+  - label: "Links"
+    id: title
+    type: text
+    default: "Links"
+
+- name: "Link"
+  type: link_item
+  root: false
+  settings:
+  - label: "Link"
+    id: link
+    type: link
+    with_text: true
+    default: "/"
+
+# By default, in the editor UI, blocks will be listed below the "Content" title.
+# The title can be changed with the following property:
+blocks_label: "Links"
+
+# By default, blocks are presented as a list in the editor UI. 
+# If you like to use blocks to build a menu with sub menu items, 
+# consider using the tree presentation
+blocks_presentation: "tree"
+
+# In order to get a section with "meaning" content for the editors, 
+# you can set the default content of a new instance of this section.
+# (it's also be useful when taking a screenshot of the section).
+sample:
+  settings:
+    logo: "/theme/image-placeholder.jpg"
+    title: "Get the latest news!"
+    body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam molestias."   
+    button_label: "Sign up"
+    copyright: "Copyright © 2022. Company Name. All rights reserved."
+    quick_links: "<a href=\"#\">Terms & Conditions</a>&nbsp;<a href=\"#\">Privacy Policy</a>&nbsp;<a href=\"#\">Cookies</a>"
+  blocks: 
+  - type: column
+    settings:
+      title: "Services"
+    children:
+    - type: link_item
+      settings:
+        link: 
+          text: "1on1 Coaching"
+          href: '#'
+    - type: link_item
+      settings:
+        link: 
+          text: "Company Review"
+          href: '#'
+    - type: link_item
+      settings:
+        link: 
+          text: "Accounts Review"
+          href: '#'
+    - type: link_item
+      settings:
+        link: 
+          text: "HR Consulting"
+          href: '#'
+    - type: link_item
+      settings:
+        link: 
+          text: "SEO Optimisation"
+          href: '#'
+  
+  - type: column
+    settings:
+      title: "Company"
+    children:
+    - type: link_item
+      settings:
+        link: 
+          text: "About"
+          href: '#'
+    - type: link_item
+      settings:
+        link: 
+          text: "Meet the Team"
+          href: '#'
+    - type: link_item
+      settings:
+        link: 
+          text: "History"
+          href: '#'
+    - type: link_item
+      settings:
+        link: 
+          text: "Careers"
+          href: '#'
+    
+  - type: column
+    settings:
+      title: "Helpful Links"
+    children:
+    - type: link_item
+      settings:
+        link: 
+          text: "Contact"
+          href: '#'
+    - type: link_item
+      settings:
+        link: 
+          text: "FAQs"
+          href: '#'
+    - type: link_item
+      settings:
+        link: 
+          text: "Live Chat"
+          href: '#'
+  
+  - type: column
+    settings:
+      title: "Legal"
+    children:
+    - type: link_item
+      settings:
+        link: 
+          text: "Accessibility"
+          href: '#'
+    - type: link_item
+      settings:
+        link: 
+          text: "Returns Policy"
+          href: '#'
+    - type: link_item
+      settings:
+        link: 
+          text: "Refund Policy"
+          href: '#'
+    - type: link_item
+      settings:
+        link: 
+          text: "Hiring Statistics"
+          href: '#'    
+  - type: column
+    settings:
+      title: "Downloads"
+    children:
+    - type: link_item
+      settings:
+        link: 
+          text: "Marketing calendar"
+          href: '#'
+    - type: link_item
+      settings:
+        link: 
+          text: "SEO Infographics"
+          href: '#'
+
+    
