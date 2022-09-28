@@ -10,10 +10,12 @@ section_categories:
   id: nav
 - name: "Banner"
   id: banner
-- name: "Call to actions"
+- name: "Call to action"
   id: cta
 - name: "FAQ"
   id: faq
+- name: "Review"
+  id: review
 - name: "Footer"
   id: footer
 

@@ -1,0 +1,105 @@
+# Name of the section displayed in the editor UI
+name: "Overall Statistic with Reviews Grid"
+
+# Category of the section in the editor UI (headers, features, testimonials, ...etc)
+category: review
+
+# A section might have the same content all over the site, like a menu or a footer for instance.
+# To enable this behavior, uncomment the following statement
+# site_scoped: true
+
+# Display or not the button to insert a new section after this one
+# insert_button: false
+
+# Insert this section at the top or the bottom of the page (default: nil)
+# insert_at: top 
+
+# one single instance per page?
+# singleton: true
+
+# Definition of the settings:
+# A setting type can be one of the following values: text, image, link, collection_item, checkbox, color and icon.
+# Please visit: https://docs.maglev.dev/concepts/setting for more explanation.
+settings:
+- label: "Title"
+  id: title
+  type: text
+  default: "Customer Reviews"
+
+- label: "Grade"
+  id: grade
+  type: text
+  default: "3.8"
+
+- label: "Number of reviews"
+  id: number_of_reviews
+  type: text
+  default: "3.8"
+
+# Definition of the blocks.
+# You can define as many types of blocks as you want.
+blocks:
+- name: "Review"
+  type: review_item
+  settings:
+  - label: "Highlight"
+    id: highlight
+    type: text
+    default: "The best thing money can buy!"
+  - label: "Testimonial"
+    id: testimonial
+    type: text
+    nb_rows: 5
+    default: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam possimus fuga dolor rerum dicta, ipsum laboriosam est totam iusto alias incidunt cum tempore aliquid aliquam error quisquam ipsam asperiores! Iste?"
+  - label: "Grade"
+    id: grade
+    type: text
+    default: "3.8"
+  - label: "Person"
+    id: person
+    type: text
+    default: "John Doe - 12th January, 2024"
+
+# By default, in the editor UI, blocks will be listed below the "Content" title.
+# The title can be changed with the following property:
+blocks_label: "List of reviews"
+
+# By default, blocks are presented as a list in the editor UI. 
+# If you like to use blocks to build a menu with sub menu items, 
+# consider using the tree presentation
+# blocks_presentation: "tree"
+
+# In order to get a section with "meaning" content for the editors, 
+# you can set the default content of a new instance of this section.
+# (it's also be useful when taking a screenshot of the section).
+sample:
+  settings:
+    title: "Customer Reviews"
+    grade: "3.8"
+    number_of_reviews: "48"
+  blocks:
+  - type: "review_item"
+    settings: 
+      highlight: "The best thing money can buy!"
+      testimonial: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam possimus fuga dolor rerum dicta, ipsum laboriosam est totam iusto alias incidunt cum tempore aliquid aliquam error quisquam ipsam asperiores! Iste?"
+      person: "John Doe - 12th January, 2024"
+      grade: "3.8"
+  - type: "review_item"
+    settings: 
+      highlight: "The best thing money can buy!"
+      testimonial: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam possimus fuga dolor rerum dicta, ipsum laboriosam est totam iusto alias incidunt cum tempore aliquid aliquam error quisquam ipsam asperiores! Iste?"
+      person: "John Doe - 12th January, 2024"
+      grade: "3.8"
+  - type: "review_item"
+    settings: 
+      highlight: "The best thing money can buy!"
+      testimonial: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam possimus fuga dolor rerum dicta, ipsum laboriosam est totam iusto alias incidunt cum tempore aliquid aliquam error quisquam ipsam asperiores! Iste?"
+      person: "John Doe - 12th January, 2024"
+      grade: "3.8"
+  - type: "review_item"
+    settings: 
+      highlight: "The best thing money can buy!"
+      testimonial: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam possimus fuga dolor rerum dicta, ipsum laboriosam est totam iusto alias incidunt cum tempore aliquid aliquam error quisquam ipsam asperiores! Iste?"
+      person: "John Doe - 12th January, 2024"
+      grade: "3.8"
+  

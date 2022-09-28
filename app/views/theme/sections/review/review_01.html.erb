@@ -1,0 +1,39 @@
+<%= maglev_section.wrapper_tag.section do %>
+  <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-8">
+    <%= maglev_section.setting_tag :title, html_tag: 'h2', class: 'text-xl font-bold sm:text-2xl' %>
+
+    <div class="flex items-center mt-4">
+      <%= maglev_section.setting_tag :grade, html_tag: 'p', class: 'text-3xl font-medium' %>
+      
+      <div class="ml-4">
+        <div class="flex -ml-1">
+          <%= render 'theme/sections/review/grades', grade: maglev_section.settings.grade.to_s.to_f.round %>
+        </div>
+
+        <p class="mt-0.5 text-xs text-gray-500">
+          Based on <%= pluralize(maglev_section.settings.number_of_reviews, 'review') %>
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 mt-8 lg:grid-cols-2 gap-x-16 gap-y-12">
+      <% maglev_section.blocks.each do |maglev_block| %>
+        <%= maglev_block.wrapper_tag.blockquote do %>
+          <header class="sm:items-center sm:flex">
+            <div class="flex -ml-1">
+              <%= render 'theme/sections/review/grades', grade: maglev_block.settings.grade.to_s.to_f.round %>
+            </div>
+
+            <%= maglev_block.setting_tag :highlight, html_tag: 'p', class: 'mt-2 font-medium sm:ml-4 sm:mt-0' %>
+          </header>
+
+          <%= maglev_block.setting_tag :testimonial, html_tag: 'p', class: 'mt-2 text-gray-700' %>
+          
+          <footer class="mt-4">
+            <%= maglev_block.setting_tag :person, html_tag: 'p', class: 'text-xs text-gray-500' %>
+          </footer>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
