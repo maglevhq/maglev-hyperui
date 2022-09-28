@@ -16,6 +16,8 @@ section_categories:
   id: faq
 - name: "Review"
   id: review
+- name: "Statistic"
+  id: stat
 - name: "Footer"
   id: footer
 
