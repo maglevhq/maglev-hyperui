@@ -1,0 +1,20 @@
+<%= maglev_section.wrapper_tag.section do %>
+  <div class="max-w-5xl px-4 py-8 mx-auto">
+    <section class="p-8 bg-gray-100 rounded-lg">
+      <div class="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:items-center">
+        <%= maglev_section.setting_tag :picture, class: "object-cover w-full rounded-lg aspect-square" %>
+        
+        <blockquote class="sm:col-span-2">
+          <%= maglev_section.setting_tag :quote, html_tag: 'p', class: 'text-xl font-medium sm:text-2xl' %>
+          
+          <cite class="inline-flex items-center mt-8 not-italic">
+            <span class="hidden w-6 h-px bg-gray-400 sm:inline-block"></span>
+            <p class="text-sm text-gray-500 uppercase sm:ml-3">
+              <%= maglev_section.setting_tag :fullname, html_tag: 'strong' %>,&nbsp;<%= maglev_section.setting_tag :position %>
+            </p>
+          </cite>
+        </blockquote>
+      </div>
+    </section>
+  </div>
+<% end %>

@@ -18,6 +18,8 @@ section_categories:
   id: review
 - name: "Statistic"
   id: stat
+- name: "Testimonial"
+  id: testimonial
 - name: "Footer"
   id: footer
 
