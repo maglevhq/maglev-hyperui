@@ -61,13 +61,13 @@ blocks: []
 # In order to get a section with "meaning" content for the editors, 
 # you can set the default content of a new instance of this section.
 # (it's also be useful when taking a screenshot of the section).
-# sample:
-#   settings:
-#     title: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo!"
-#     body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore officia corporis quasi doloribus iure architecto quae voluptatum beatae excepturi dolores."
-#     background_image: "/theme/image-placeholder.jpg"
-#     button: 
-#       text: "Order Now"
-#       href: "#"
-#   blocks: []
+sample:
+  settings:
+    title: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo!"
+    body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore officia corporis quasi doloribus iure architecto quae voluptatum beatae excepturi dolores."
+    background_image: "/theme/image-placeholder.jpg"
+    button: 
+      text: "Order Now"
+      href: "#"
+  blocks: []
   

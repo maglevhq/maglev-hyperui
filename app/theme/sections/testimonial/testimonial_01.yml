@@ -34,7 +34,7 @@ settings:
 - label: "Picture"
   id: picture
   type: image
-  default: "/theme/image-placeholder.jpg"
+  default: "/theme/marie-curie.jpg"
 
 - label: "Quote"
   id: quote
@@ -63,7 +63,7 @@ sample:
   settings:
     fullname: "Justin Harrison"
     position: "Beatle Inc."
-    picture: "/theme/image-placeholder.jpg"
+    picture: "/theme/marie-curie.jpg"
     quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt perspiciatis cumque neque ut nobis excepturi, quasi iure quisquam autem alias."
   blocks: []
   

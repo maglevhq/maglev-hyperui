@@ -24,7 +24,7 @@ settings:
 - label: "Logo"
   id: logo
   type: image
-  default: "/theme/image-placeholder.jpg"
+  default: "/theme/logoipsum-white.svg"
 
 - label: "Title"
   id: title
@@ -96,7 +96,7 @@ blocks_presentation: "tree"
 # (it's also be useful when taking a screenshot of the section).
 sample:
   settings:
-    logo: "/theme/image-placeholder.jpg"
+    logo: "/theme/logoipsum-white.svg"
     title: "Get the latest news!"
     body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam molestias."   
     button_label: "Sign up"

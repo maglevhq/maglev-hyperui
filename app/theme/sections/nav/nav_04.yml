@@ -9,7 +9,7 @@ category: nav
 site_scoped: true
 
 # Display or not the button to insert a new section after this one
-insert_button: false
+insert_button: true
 
 # Insert this section at the top or the bottom of the page (default: nil)
 insert_at: top 
@@ -24,7 +24,7 @@ settings:
 - label: "Logo"
   id: logo
   type: image
-  default: "/theme/image-placeholder.jpg"
+  default: "/theme/logoipsum.svg"
 
 # Definition of the blocks.
 # You can define as many types of blocks as you want.
@@ -69,7 +69,7 @@ blocks_label: "Navigation"
 # (it's also be useful when taking a screenshot of the section).
 sample:
   settings:
-    logo: "/theme/image-placeholder.jpg" 
+    logo: "/theme/logoipsum.svg"
   blocks:     
   - type: link_item
     settings:

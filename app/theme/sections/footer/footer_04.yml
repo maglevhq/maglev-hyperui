@@ -24,7 +24,7 @@ settings:
 - label: "Logo"
   id: logo
   type: image
-  default: "/theme/image-placeholder.jpg"
+  default: "/theme/logoipsum.svg"
 
 - label: "Text"
   id: text
@@ -68,7 +68,7 @@ blocks_label: "Links"
 # (it's also be useful when taking a screenshot of the section).
 sample:
   settings:
-    logo: "/theme/image-placeholder.jpg"
+    logo: "/theme/logoipsum.svg"
     text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa cum itaque neque."
     copyright: "Copyright © 2022. All rights reserved."
   blocks: 
